@@ -14,6 +14,7 @@ document.onclick=function(ev){
 # 二.常见的事件类型：
 1. 常用的鼠标事件
 
+# 手机滑动事件：touch
 # onload：xhr页面的内容（结构，数据）加载完毕，触发事件
 # onreadystatechange：状态码发生改变，立刻触发此事件
 # onhashchange:地址栏发生改变时
