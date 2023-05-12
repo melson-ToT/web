@@ -508,7 +508,7 @@ export default {
       }
     }
 
-4. 如果 mutations 里面如果赝作异步操作，是不可以的，必须通过 actions 内做异步来触发
+4. 如果 mutations 里面如果要作异步操作，是不可以的，必须通过 actions 内做异步来触发
 
 5. actions 通过 context.commit 来获取 mutations 的 add
 
