@@ -128,7 +128,7 @@ export default {
   },
 };
 
-2. 如果在方法中华，想要改变 name
+2. 如果在方法中，想要改变 name
 <script>
  import { createStore } from 'vuex'
  export default createStore({
