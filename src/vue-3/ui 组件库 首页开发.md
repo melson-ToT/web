@@ -243,3 +243,39 @@ export default {
 }
 
 </style>
+
+
+
+# 七.在 Vant 中，找到 Grid 宫格
+
+1. 将对应的 HTML 代码 复制到对应的组件中
+
+2. 改写文字
+
+3. 将改写 icon="photo-o" 删除
+<van-grid-item icon="photo-o" text="每日福利" />
+
+4. 改写为双标签
+<van-grid-item text="每日福利"></van-grid-item>
+
+5. 在双标签内，使用具名插槽
+<van-grid-item text="每日福利">
+  <template #icon><img src="" alt=""></template>
+</van-grid-item>
+
+6. 案例
+  <van-grid>
+    <van-grid-item text="每日福利">
+      <template #icon><img src="" alt=""></template>
+    </van-grid-item>
+    <van-grid-item text="每日福利">
+      <template #icon><img src="" alt=""></template>
+    </van-grid-item>
+    <van-grid-item text="每日福利">
+      <template #icon><img src="" alt=""></template>
+    </van-grid-item>
+    <van-grid-item text="每日福利">
+      <template #icon><img src="" alt=""></template>
+    </van-grid-item>
+  </van-grid>
+
