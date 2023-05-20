@@ -279,3 +279,11 @@ export default {
     </van-grid-item>
   </van-grid>
 
+<style>
+  .van-grid-item {
+  img {
+    width: 40px;
+    height: 20px;
+  }
+}
+
