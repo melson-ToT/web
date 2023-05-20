@@ -31,6 +31,37 @@ https://vant-ui.github.io/vant/#/zh-CN/swipe vue3
 
 4. 在 main.ts 中: createApp(App).use(store).use(router).use(Vant).mount('#app')
 
+5.  import 'vant/lib/index.css' 是将所有的 ui 组件库，全都引入进来
+
+6. 命令行：npm i babel-plugin-import -D
+
+7. 在src中建一个 .babel.config.js 的文件
+
+8. 在main.js中
+   删除：
+   <!-- import "./assets/css.css"
+   import "amfe-flexible" -->
+
+   createApp(App).use(store).use(router)
+   <!-- .use(Vant) -->
+   .mount('#app')
+
+   增加：
+   用什么组件库，就引入
+ import { Swipe, SwipeItem } from 'vant';
+
+createApp(App)
+.use(store)
+.use(router)
+.use(Vant)
+<!-- .use(Swipe)
+.use(SwipeItem) -->
+.mount('#app')
+
+
+
+8. 在组件中就不需要再引入了
+
 
 
 # 三.组件中使用
@@ -287,3 +318,10 @@ export default {
   }
 }
 
+
+
+# 八.在 Vant 中，找到 Grid 宫格，创建每行二个的图标
+
+1. 在 Vant 中，找到 Grid 宫格 的自定义列数
+
+2. 在一级标签内，加:column-num="3"
