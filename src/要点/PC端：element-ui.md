@@ -59,7 +59,7 @@
 
 
 
-5. 组件中需要的 ui 组件，在 element-ui 中，找到，然后将代码引入：
+5. vue2：组件中需要的 ui 组件，在 element-ui 中，找到，然后将代码引入：
 <template>
    <div>
       <el-button type="success">成功按钮</el-button>
