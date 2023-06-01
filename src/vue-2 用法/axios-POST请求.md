@@ -96,15 +96,108 @@ fn(){//列表页面的接口
 
 
 <!--  发起一个post请求 -->
-axios({
-  method: 'post',
-  url: '/user/12345',
-  data: {
-    firstName: 'Fred',
-    lastName: 'Flintstone'
+<template>
+  <div class="login">
+    <el-form
+      :model="ruleForm"
+      :rules="rules"
+      ref="ruleForm"
+      class="demo-ruleForm"
+    >
+      <el-form-item label="账号" prop="username">
+        <el-input
+          v-model="ruleForm.username"
+          placeholder="请输入内容"
+        ></el-input>
+      </el-form-item>
+      <el-form-item label="密码" prop="password">
+        <el-input
+          placeholder="请输入密码"
+          v-model="ruleForm.password"
+          show-password
+        ></el-input>
+      </el-form-item>
+      <div class="bt">
+        <el-button type="success" @click="fn">登录</el-button>
+        <el-button type="info" @click="fa">重置</el-button>
+      </div>
+    </el-form>
+  </div>
+</template>
+
+<script>
+import aaa from "../../utils/index";
+export default {
+  data() {
+    return {
+      //登录表单的数据绑定对象
+      ruleForm: {
+        username: "",
+        password: "",
+      },
+      //验证用户名和密码是否合法
+      rules: {
+        //验证用户名是否合法
+        username: [
+          { required: true, message: "请输入账号", trigger: "blur" },
+          {
+            // pattern: /^[a-zA-Z][-_a-zA-Z0-9]{5,12}$/,
+            message: "格式有误",
+            trigger: "blur",
+          },
+        ],
+        //验证密码是否合法
+        password: [
+          { required: true, message: "请输入密码", trigger: "blur" },
+          {
+            // pattern: /^[a-zA-Z][-_a-zA-Z0-9]{5,12}$/,
+            message: "格式有误",
+            trigger: "blur",
+          },
+        ],
+      },
+    };
+  },
+  methods: {
+    fn() {
+      aaa({
+        method: "POST",
+        url: "/api/login",
+        params: { age: 1 },
+      }).then((res)=>{
+        if(res.data.c)
+      })
+  },
+};
+</script>
+
+<style lang="less" scoped>
+.login {
+  width: 100%;
+  height: 100%;
+  .el-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    box-sizing: border-box;
+    .el-form-item {
+      display: flex;
+      .el-input {
+        width: 218px;
+      }
+    }
   }
-});
-<!-- // 在 node.js 用GET请求获取远程图片 -->
+  .bt {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+</style>
+
+S
 
 
 
