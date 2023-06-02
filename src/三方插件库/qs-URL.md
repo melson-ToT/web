@@ -36,7 +36,7 @@ qs.stringify(obj)
 <!-- "name=zhang&age=20" -->
 
 
-let - obj = {
+let obj = {
   name = 'zhangsan',
   age = 18,
   aaa = ['ENF','CHINA']
