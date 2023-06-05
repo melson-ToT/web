@@ -139,3 +139,39 @@ class App extends React.Component {
     }
 }
 export default App
+
+
+
+# 八.组件的占位符
+
+1. 一般组件内的嵌套嵌套多个组件，所以，要用一个元素把他们包起来，且多个组件 return要加()，return()
+class App extends React.Component {
+    render(){
+        //每一个组件都只能有一个根元素
+        return (
+        <div>
+          <Header />
+          <Footer />
+        </div>
+        )
+    }
+}
+
+2. 如果想要将这个 <div>编程占位符，要用：<React.Fragment>标签
+class App extends React.Component {
+    render(){
+        //每一个组件都只能有一个根元素
+        return (
+        <React.Fragment>
+          <Header />
+          <Footer />
+        </React.Fragment>
+        )
+    }
+}
+
+
+
+
+
+由于每一个组件都只能有一个根元素，所以
